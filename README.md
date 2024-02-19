@@ -26,3 +26,8 @@ Love,
 
 The Credit Card Company
 ```
+
+## Points of Attention
+
+- Pay particular attention to how you generate feedback. Are you generating enough?
+- Are you solving the problem in small enough increments?
