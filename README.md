@@ -1,46 +1,33 @@
-# Kotlin Kata Base
+# Unusual Spending Kata Kotlin
 
-[![Kotlin CI with Gradle](https://github.com/rstraub/kotlin-kata-base/actions/workflows/gradle.yml/badge.svg)](https://github.com/rstraub/kotlin-kata-base/actions/workflows/gradle.yml)
+Based on [this kata](https://kata-log.rocks/unusual-spending-kata).
 
-Starter project for Code Katas in Kotlin. Batteries included.
+## Description
 
-Included:
+You work at a credit card company, and for a new feature, they want to start providing alerts to users when their spending in any particular category is higher than usual.
 
-| Tool                                                  | Type                         |
-|-------------------------------------------------------|------------------------------|
-| [Gradle](https://gradle.org)                          | Build Tool                   |
-| [Junit 5](https://junit.org/junit5/)                  | Testing Library              |
-| [Ktlint](https://pinterest.github.io/ktlint/latest/)  | Linting Plugin               |
-| [Github Actions](https://github.com/features/actions) | Continuous Integration       |
-| [Github Dependabot](https://github.com/dependabot)    | Automatic Dependency Updates |
+Each payment has an amount, description, and category.
+A category is a collection of payments like “entertainment”, “restaurants”, and “golf.”
 
-## Installation
+For a given user, fetch the payments for the current month and the previous month.
+Compare the total amount paid for each month, per category.
+A category should be marked for unusual spending when the customer spent at least 50% more this month compared to last month.
+To notify the customer, compose an e-mail message listing these categories, looking somewhat like this:
 
-This project requires some tooling on your machine, as described in the `.sdkmanrc`. If you use
-sdkman `cd` into the root of this project and run:
+```
+Hello card user!
 
-```shell
-sdk env install
+We have detected unusually high spending on your card in these categories:
+
+* You spent $148 on groceries
+* You spent $928 on travel
+
+Love,
+
+The Credit Card Company
 ```
 
-to install the required sdks. You can also install them yourself.
+## Points of Attention
 
-## Run
-
-```shell
-./gradlew run
-```
-
-## Compile
-
-```shell
-./gradlew compile
-```
-
-## Tests
-
-Run unit tests:
-
-```shell
-./gradlew test
-```
+- Pay particular attention to how you generate feedback. Are you generating enough?
+- Are you solving the problem in small enough increments?
