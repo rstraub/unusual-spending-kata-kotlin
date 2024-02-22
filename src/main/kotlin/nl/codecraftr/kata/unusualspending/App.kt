@@ -4,7 +4,7 @@
 package nl.codecraftr.kata.unusualspending
 
 object App {
-    fun hello() = "Goodbye, World!"
+    fun hello() = "Hello, World!"
 }
 
 fun main() = print(App.hello())
