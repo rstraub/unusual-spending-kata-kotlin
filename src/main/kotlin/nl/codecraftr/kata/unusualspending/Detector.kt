@@ -1,10 +1,10 @@
 package nl.codecraftr.kata.unusualspending
 
 object Detector {
-    fun detect(prevMonth: List<Payment>, currentMonth: List<Payment>): List<Pair<Int, Category>> {
+    fun detect(prevMonth: List<Payment>, currentMonth: List<Payment>): List<UnusualCategory> {
         return prevMonth.zip(currentMonth)
                 .filter { isUnusual(it.first, it.second) }
-                .map { it.second.amount to it.second.category }
+                .map { UnusualCategory(it.second.amount, it.second.category) }
     }
 
     private fun isUnusual(prev: Payment, current: Payment) =

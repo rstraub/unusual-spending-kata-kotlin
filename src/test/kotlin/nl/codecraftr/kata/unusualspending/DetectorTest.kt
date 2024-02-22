@@ -13,7 +13,7 @@ class DetectorTest {
 
         val result = Detector.detect(prevMonth, currentMonth)
 
-        result shouldBe listOf(15 to Groceries)
+        result shouldBe listOf(UnusualCategory(15, Groceries))
     }
 
     @Test
@@ -27,7 +27,8 @@ class DetectorTest {
 
         val result = Detector.detect(prevMonth, currentMonth)
 
-        result shouldBe listOf(15 to Groceries, 30 to Travel)
+        result shouldBe listOf(UnusualCategory(15, Groceries),
+                UnusualCategory(30, Travel))
     }
 
     @Test
@@ -39,7 +40,7 @@ class DetectorTest {
 
         val result = Detector.detect(prevMonth, currentMonth)
 
-        result shouldBe listOf(15 to Groceries)
+        result shouldBe listOf(UnusualCategory(15, Groceries))
     }
 
     @Test
