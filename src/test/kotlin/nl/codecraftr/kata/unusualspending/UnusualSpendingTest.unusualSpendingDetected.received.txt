@@ -2,8 +2,8 @@ Hello card user!
 
 We have detected unusually high spending on your card in these categories:
 
-* You spent $10 on groceries
-* You spent $15 on travel
+* You spent $100 on groceries
+* You spent $928 on travel
 
 Love,
 

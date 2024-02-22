@@ -26,6 +26,12 @@ class EmailBuilderTest {
             Love,
 
             The Credit Card Company
+
         """.trimIndent()
+    }
+
+    @Test
+    fun `should do something given no unusual spending`() {
+        TODO("Not yet implemented")
     }
 }
