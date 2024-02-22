@@ -31,6 +31,18 @@ class DetectorTest {
     }
 
     @Test
+    fun `should flag unusual spending using the sum of all payments with a category`() {
+        val prevMonth = listOf(Payment(10, "test", Groceries))
+        val currentMonth = listOf(
+                Payment(10, "test", Groceries),
+                Payment(5, "test", Groceries))
+
+        val result = Detector.detect(prevMonth, currentMonth)
+
+        result shouldBe listOf(15 to Groceries)
+    }
+
+    @Test
     fun `should not flag spending given under 50% increase within category`() {
         val prevMonth = listOf(
                 Payment(10, "test", Groceries))
