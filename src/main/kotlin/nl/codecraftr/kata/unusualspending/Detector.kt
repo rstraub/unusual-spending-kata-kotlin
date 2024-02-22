@@ -2,11 +2,18 @@ package nl.codecraftr.kata.unusualspending
 
 object Detector {
     fun detect(prevMonth: List<Payment>, currentMonth: List<Payment>): List<CategorySpending> {
-        return prevMonth.zip(currentMonth)
+        val groupedPrevMonth = toSpendingPerCategory(prevMonth)
+        val groupedCurrentMonth = toSpendingPerCategory(currentMonth)
+
+        return groupedPrevMonth.zip(groupedCurrentMonth)
                 .filter { isUnusual(it.first, it.second) }
-                .map { CategorySpending(it.second.amount, it.second.category) }
+                .map { it.second }
     }
 
-    private fun isUnusual(prev: Payment, current: Payment) =
+    private fun toSpendingPerCategory(payments: List<Payment>) = payments.groupBy { it.category }.mapValues {
+        CategorySpending(it.value.sumOf { p -> p.amount }, it.key)
+    }.values.toList()
+
+    private fun isUnusual(prev: CategorySpending, current: CategorySpending) =
             prev.amount * 1.5 <= current.amount
 }
