@@ -32,6 +32,6 @@ class EmailBuilderTest {
 
     @Test
     fun `should do something given no unusual spending`() {
-        TODO("Not yet implemented")
+        EmailBuilder.build(emptyList()) shouldBe null
     }
 }

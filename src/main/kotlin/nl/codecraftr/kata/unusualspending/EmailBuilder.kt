@@ -1,8 +1,10 @@
 package nl.codecraftr.kata.unusualspending
 
 object EmailBuilder {
-    fun build(unusual: List<UnusualCategory>): String {
-        return """
+    fun build(unusual: List<UnusualCategory>): String? {
+        return if (unusual.isEmpty()) null
+        else
+            """
             |Hello card user!
             |
             |We have detected unusually high spending on your card in these categories:
