@@ -1,7 +1,7 @@
 package nl.codecraftr.kata.unusualspending
 
 object EmailBuilder {
-    fun build(unusual: List<UnusualCategory>): String? {
+    fun build(unusual: List<CategorySpending>): String? {
         return if (unusual.isEmpty()) null
         else
             """
@@ -18,7 +18,7 @@ object EmailBuilder {
         """.trimMargin()
     }
 
-    private fun lines(unusual: List<UnusualCategory>) =
+    private fun lines(unusual: List<CategorySpending>) =
             unusual.joinToString("\n") {
                 "* You spent \$${it.amount} on ${it.category.name.lowercase()}"
             }

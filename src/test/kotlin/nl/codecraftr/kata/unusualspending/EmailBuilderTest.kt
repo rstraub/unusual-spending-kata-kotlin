@@ -9,8 +9,8 @@ class EmailBuilderTest {
     @Test
     fun `should build a message given unusual spending`() {
         val unusual = listOf(
-                UnusualCategory(10, Groceries),
-                UnusualCategory(15, Travel)
+                CategorySpending(10, Groceries),
+                CategorySpending(15, Travel)
         )
 
         val result  = EmailBuilder.build(unusual)
